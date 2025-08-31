@@ -4,7 +4,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home',[
-        'greetings' => 'Hello'
+        'jobs'=> [
+            [
+                'title' => 'director',
+                'salary' => '50,000'
+            ],
+            [
+                'title'=> 'sweeper',
+                'salary' => '90,000'
+            ],
+            [
+                'title'=> 'janitor',
+                'salary' => '100,000'
+            ]
+        ]
     ]);
 });
 
