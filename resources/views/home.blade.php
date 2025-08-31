@@ -5,7 +5,7 @@
 
     @foreach ($jobs as $job )
         
-    <li>{{$job['title']}}</li>
+    <li>{{$job['title']}} : pays : {{$job['salary']}}</li>
     @endforeach
     
 
