@@ -3,13 +3,7 @@
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/jobs', function () {
-        return view('jobs',[
-            'jobs'=> [
+$jobs =  [
                 [
                     'id' => '1',
                     'title' => 'director',
@@ -25,29 +19,20 @@ Route::get('/jobs', function () {
                     'title'=> 'janitor',
                     'salary' => '100,000'
                 ]
-            ]
-        ]);
+            ];
+
+Route::get('/', function () {
+    return view('home');
 });
 
-Route::get('/jobs/{id}', function ($id) {
+Route::get('/jobs', function () use($jobs) {
+        return view('jobs',[
+            'jobs'=> $jobs]);
+});
+
+Route::get('/jobs/{id}', function ($id) use ($jobs) {
     // dd($id);
-    $jobs =  [
-            [
-                'id' => '1',
-                'title' => 'director',
-                'salary' => '50,000'
-            ],
-            [
-                'id' => '2',
-                'title'=> 'sweeper',
-                'salary' => '90,000'
-            ],
-            [
-                'id' => '3',
-                'title'=> 'janitor',
-                'salary' => '100,000'
-            ]
-            ];
+  
         // Arr::first($jobs, function ($job) use ($id) {
         //     return $job['id'] == $id;
         // });
