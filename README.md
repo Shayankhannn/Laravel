@@ -120,12 +120,12 @@ for this in web we did this
 
 from this 
        return view('jobs',[
-            'jobs'=> Job::all()]);
+            'jobs'=> Job::all()]); -- lazy loading
 });
 
 to this
 Route::get('/jobs', function ()  {
-    $jobs = Job::with('employer')->get();
+    $jobs = Job::with('employer')->get(); -- eager laoding
         return view('jobs',[
             'jobs'=> $jobs]);
 });
