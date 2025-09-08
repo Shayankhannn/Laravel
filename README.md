@@ -104,3 +104,11 @@ in sql: pragma foreign_keys=on
  App\Models\Job::factory(10)->create()  
 
  > $job = App\Models\Job::find(10)      
+
+ > $tag = App\Models\Tag::find(1) 
+
+ > $tag->jobs()->attach(7) 
+
+> $tag->jobs()->get()
+
+> $tag->jobs()->get()->pluck('title')  
