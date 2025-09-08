@@ -115,3 +115,26 @@ in sql: pragma foreign_keys=on
 
 N+1 problem:
 the N+1 problem refers to database queries executed within loop rather than making a single query that loads all of relevent data upfront
+
+for this in web we did this
+
+from this 
+       return view('jobs',[
+            'jobs'=> Job::all()]);
+});
+
+to this
+Route::get('/jobs', function ()  {
+    $jobs = Job::with('employer')->get();
+        return view('jobs',[
+            'jobs'=> $jobs]);
+});
+
+
+if you want to disable lazy loading 
+
+in app service provider
+  public function boot(): void
+    {
+        Model::preventLazyLoading();
+    }
