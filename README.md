@@ -112,3 +112,6 @@ in sql: pragma foreign_keys=on
 > $tag->jobs()->get()
 
 > $tag->jobs()->get()->pluck('title')  
+
+N+1 problem:
+the N+1 problem refers to database queries executed within loop rather than making a single query that loads all of relevent data upfront
