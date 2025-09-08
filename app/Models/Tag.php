@@ -12,7 +12,7 @@ class Tag extends Model
 
     protected function jobs()
     {
-        return $this->belongsToMany(Job::class);
+        return $this->belongsToMany(Job::class,relatedPivotKey:"job_listing_id");
     }    
 
 }
