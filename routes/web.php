@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 Route::get('/jobs', function ()  {
     // $jobs = Job::with('employer')->get();
-    $jobs = Job::with('employer')->simplePaginate(4);
+    $jobs = Job::with('employer')->latest()->simplePaginate(4);
         return view('jobs.index',[
             'jobs'=> $jobs]);
 });
@@ -22,7 +22,15 @@ Route::get('/jobs/create', function (){
     return view('jobs.create');
 });
 Route::post('/jobs', function (){
-    dd("hell");
+    // dd("hell");
+    // dd(request()->all());
+    Job::create([
+        'title'=> request('title'),
+        'salary'=> request('salary'),
+        'employer_id'=> 1,
+
+    ]);
+    return redirect('/jobs');
 });
 
 Route::get('/jobs/{id}', function ($id)  {
