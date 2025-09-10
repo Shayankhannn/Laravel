@@ -21,6 +21,9 @@ Route::get('/jobs', function ()  {
 Route::get('/jobs/create', function (){
     return view('jobs.create');
 });
+Route::post('/jobs', function (){
+    dd("hell");
+});
 
 Route::get('/jobs/{id}', function ($id)  {
     // dd($id);
