@@ -147,4 +147,10 @@ in app service provider
 
     $jobs = Job::with('employer')->paginate(3); this kind of pagination can cause performance issue if there are many records so we use 
     $jobs = Job::with('employer')->simplePaginate(3);
-    
+
+
+     php artisan db:seed  
+
+     php artisan  make:seeder  
+
+      php artisan migrate:fresh --seed
