@@ -30,6 +30,7 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
               <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
               <x-nav-link href="jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+              <x-nav-link href="jobs/create" :active="request()->is('create')">Create Jobs</x-nav-link>
               <x-nav-link href="contact" :active="request()->is('contact')">Contact</x-nav-link>
             </div>
           </div>
@@ -68,6 +69,7 @@
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
         <a href="/" aria-current="page" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</a>
         <a href="jobs" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Jobs</a>
+        <a href="jobs/create" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Create Job</a>
         <a href="contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
 
     </div>

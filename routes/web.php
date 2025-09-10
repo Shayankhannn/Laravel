@@ -12,9 +12,14 @@ Route::get('/', function () {
 
 Route::get('/jobs', function ()  {
     // $jobs = Job::with('employer')->get();
-    $jobs = Job::with('employer')->paginate(3);
-        return view('jobs',[
+    $jobs = Job::with('employer')->simplePaginate(4);
+        return view('jobs.index',[
             'jobs'=> $jobs]);
+});
+
+
+Route::get('/jobs/create', function (){
+    return view('jobs.create');
 });
 
 Route::get('/jobs/{id}', function ($id)  {
@@ -25,10 +30,11 @@ Route::get('/jobs/{id}', function ($id)  {
         // });
             
        $job = Job::find($id);            
-    return view('job',[
+    return view('jobs.show',[
         'job' => $job
     ]);
 });
+
 
 Route::get('/contact', function () {
     return view('contact');
