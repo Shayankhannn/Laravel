@@ -138,3 +138,13 @@ in app service provider
     {
         Model::preventLazyLoading();
     }
+
+    php artisan vendor:publish
+
+    to change the default styling of pagination do it app service provider
+
+    Paginator::useBootstrapFive();
+
+    $jobs = Job::with('employer')->paginate(3); this kind of pagination can cause performance issue if there are many records so we use 
+    $jobs = Job::with('employer')->simplePaginate(3);
+    
