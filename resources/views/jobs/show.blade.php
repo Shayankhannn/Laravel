@@ -6,4 +6,6 @@
     <h2>{{$job['title']}}</h2>
     <p>{{$job['salary']}} per year</p>
 
+    
+
 </x-layout>
