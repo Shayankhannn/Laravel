@@ -10,6 +10,7 @@ Route::get('/', function () {
     // dd($jobs[0]->title);
 });
 
+// index job
 Route::get('/jobs', function ()  {
     // $jobs = Job::with('employer')->get();
     $jobs = Job::with('employer')->latest()->simplePaginate(4);
@@ -17,10 +18,12 @@ Route::get('/jobs', function ()  {
             'jobs'=> $jobs]);
 });
 
-
+// create job
 Route::get('/jobs/create', function (){
     return view('jobs.create');
 });
+
+// store job
 Route::post('/jobs', function (){
     // dd("hell");
     // dd(request()->all());
@@ -37,6 +40,7 @@ Route::post('/jobs', function (){
     return redirect('/jobs');
 });
 
+// show job
 Route::get('/jobs/{id}', function ($id)  {
     // dd($id);
   
@@ -46,6 +50,14 @@ Route::get('/jobs/{id}', function ($id)  {
             
        $job = Job::find($id);            
     return view('jobs.show',[
+        'job' => $job
+    ]);
+});
+
+// edit job
+Route::get('/jobs/{id}/edit', function ($id)  {
+       $job = Job::find($id);            
+    return view('jobs.edit',[
         'job' => $job
     ]);
 });
