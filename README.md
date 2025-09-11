@@ -154,3 +154,5 @@ in app service provider
      php artisan  make:seeder  
 
       php artisan migrate:fresh --seed
+
+      go to laravel docs validation for more validation
