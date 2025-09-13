@@ -41,29 +41,29 @@ Route::post('/jobs', function (){
 });
 
 // show job
-Route::get('/jobs/{id}', function ($id)  {
+Route::get('/jobs/{job}', function (Job $job)  {    // route model binding
     // dd($id);
   
         // Arr::first($jobs, function ($job) use ($id) {
         //     return $job['id'] == $id;
         // });
+        //    $job = Job::find($id);            
             
-       $job = Job::find($id);            
     return view('jobs.show',[
         'job' => $job
     ]);
 });
 
 // edit job
-Route::get('/jobs/{id}/edit', function ($id)  {
-       $job = Job::find($id);            
+Route::get('/jobs/{job}/edit', function (Job $job)  {
+    //    $job = Job::find($id);            
     return view('jobs.edit',[
         'job' => $job
     ]);
 });
 
 // Update job
-Route::patch('/jobs/{id}', function ($id)  {            
+Route::patch('/jobs/{job}', function (Job $job)  {            
     //    validate 
  request()->validate([
         'title'=> ['required','min:3'],
@@ -71,7 +71,7 @@ Route::patch('/jobs/{id}', function ($id)  {
     ]);
     // authorize 
 
-    $job = Job::findorfail($id); // this will try to find if not there then fail
+    // $job = Job::findorfail($id); // this will try to find if not there then fail
 
     // $job->title = request('title') ;
     // $job->salary = request('salary') ;
@@ -86,9 +86,9 @@ Route::patch('/jobs/{id}', function ($id)  {
 
 // delete job
 
-Route::delete('/jobs/{id}', function ($id)  {            
+Route::delete('/jobs/{job}', function (Job $job)  {            
     // authorize hold
-    $job = Job::findorfail($id);
+    // $job = Job::findorfail($id);
     $job->delete();
     
     return redirect('/jobs');
