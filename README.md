@@ -156,3 +156,5 @@ in app service provider
       php artisan migrate:fresh --seed
 
       go to laravel docs validation for more validation
+
+      if you dont want to manually fetch jobs from database you can let the framework do it for you learn about ---  Route model binding --

@@ -64,19 +64,36 @@ Route::get('/jobs/{id}/edit', function ($id)  {
 
 // Update job
 Route::patch('/jobs/{id}', function ($id)  {            
-       $job = Job::find($id);            
-    return view('jobs.show',[
-        'job' => $job
+    //    validate 
+ request()->validate([
+        'title'=> ['required','min:3'],
+        'salary'=>['required'],
     ]);
+    // authorize 
+
+    $job = Job::findorfail($id); // this will try to find if not there then fail
+
+    // $job->title = request('title') ;
+    // $job->salary = request('salary') ;
+    // $job->save();
+
+    $job->update([
+        'title'=> request('title'),
+        'salary'=> request('salary'),
+    ]);
+    return redirect('/jobs/' . $job->id);
 });
 
 // delete job
 
 Route::delete('/jobs/{id}', function ($id)  {            
-       $job = Job::find($id);            
-    return view('jobs.show',[
-        'job' => $job
-    ]);
+    // authorize hold
+    $job = Job::findorfail($id);
+    $job->delete();
+    
+    return redirect('/jobs');
+
+
 });
 
 
