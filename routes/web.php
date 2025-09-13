@@ -62,6 +62,23 @@ Route::get('/jobs/{id}/edit', function ($id)  {
     ]);
 });
 
+// Update job
+Route::patch('/jobs/{id}', function ($id)  {            
+       $job = Job::find($id);            
+    return view('jobs.show',[
+        'job' => $job
+    ]);
+});
+
+// delete job
+
+Route::delete('/jobs/{id}', function ($id)  {            
+       $job = Job::find($id);            
+    return view('jobs.show',[
+        'job' => $job
+    ]);
+});
+
 
 Route::get('/contact', function () {
     return view('contact');
