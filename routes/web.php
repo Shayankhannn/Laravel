@@ -6,19 +6,24 @@ use Illuminate\Support\Facades\Route;
 
 //home
 Route::view('/','home');
+
+Route::controller(JobController::class)->group(function (){
 // index job
-Route::get('/jobs',[JobController::class,'index'] );
+Route::get('/jobs','index' );
 // create job
-Route::get('/jobs/create',[JobController::class,'create']);
+Route::get('/jobs/create','create');
 // store job
-Route::post('/jobs',[JobController::class,'store'] );
+Route::post('/jobs','store' );
 // show job
-Route::get('/jobs/{job}',[JobController::class,'show'] );
+Route::get('/jobs/{job}','show' );
 // edit job
-Route::get('/jobs/{job}/edit',[JobController::class,'edit']);
+Route::get('/jobs/{job}/edit','edit');
 // Update job
-Route::patch('/jobs/{job}', [JobController::class,'update']);
+Route::patch('/jobs/{job}', 'update');
 // delete job
-Route::delete('/jobs/{job}',[JobController::class,'destroy']);
+Route::delete('/jobs/{job}','destroy');
+
+});
+
 //contact
 Route::view('/contact', 'contact');
