@@ -165,3 +165,8 @@ in app service provider
        php artisan route:list
 
         php artisan route:list --except-vendor
+
+
+php artisan make:controller RegisteredUserController
+
+        php artisan make:controller SessionController     
