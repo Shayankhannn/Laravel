@@ -170,3 +170,8 @@ in app service provider
 php artisan make:controller RegisteredUserController
 
         php artisan make:controller SessionController     
+
+        review
+        rate limiting -- control the rate of request that may be sent to server
+
+        $model->is() -- determine if two model have the same ID and belong to the same table  
