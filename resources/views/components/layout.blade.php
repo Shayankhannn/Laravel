@@ -43,6 +43,9 @@
           @endguest
 
           @auth
+            <div class="mx-4">
+              <h3 class="capitalize text-white font-medium ">Welcome {{Auth::user()->name}}</h3>
+            </div>
             <form action="/logout" method="post">
               @csrf
               <x-form-button>LogOut</x-form-button>
