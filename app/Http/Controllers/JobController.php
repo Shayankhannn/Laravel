@@ -58,6 +58,7 @@ class JobController extends Controller
     public function edit(Job $job)
     {
         
+
            
         // if(Gate::denies('edit-job',$job))
         Gate::authorize('edit-job',$job);
