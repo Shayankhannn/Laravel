@@ -6,12 +6,12 @@
     <h2>{{$job->title}}</h2>
     <p>{{$job->salary}} per year</p>
 
-@can('edit-job',$job)
+@cannot('edit-job',$job)
     
 <p class="mt-5">
 <x-button href="/jobs/{{ $job->id }}/edit">Edit Job</x-button>
 </p>
-@endcan
+@endcannot  
 
 
 </x-layout>
