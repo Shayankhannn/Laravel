@@ -21,7 +21,7 @@ Route::post('/jobs','store' )->middleware('auth');
 // show job
 Route::get('/jobs/{job}','show' );
 // edit job
-Route::get('/jobs/{job}/edit','edit')->middleware('auth')->can('edit-job','job');
+Route::get('/jobs/{job}/edit','edit')->middleware('auth')->can('edit','job');
 // Route::get('/jobs/{job}/edit','edit')->middleware(['auth','can:edit-job,job']);
 // Update job
 Route::patch('/jobs/{job}', 'update');
