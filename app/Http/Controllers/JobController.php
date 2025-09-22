@@ -61,7 +61,7 @@ class JobController extends Controller
 
            
         // if(Gate::denies('edit-job',$job))
-        Gate::authorize('edit-job',$job);
+        // Gate::authorize('edit-job',$job);
         
           //    $job = Job::find($id);            
     return view('jobs.edit',[

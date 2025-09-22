@@ -174,4 +174,11 @@ php artisan make:controller RegisteredUserController
         review
         rate limiting -- control the rate of request that may be sent to server
 
-        $model->is() -- determine if two model have the same ID and belong to the same table  
+        $model->is() -- determine if two model have the same ID and belong to the same table 
+
+        middleware
+
+        if you want to search more about this search laravel name routes
+        Route::resource('jobs',JobController::class)->middleware('auth')
+        Route::get('/login',[SessionController::class,'create'])->name('login');
+ 
