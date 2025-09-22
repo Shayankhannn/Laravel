@@ -191,3 +191,6 @@ authorization :
 if you are building something simple gate fascade is fine open your app service provider define few gate and you are good to go 
 
 for any thing little bit larger I 1oo% redcommned that you stick with policy 
+
+mail:
+php artisan make:mail
