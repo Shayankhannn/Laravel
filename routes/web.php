@@ -38,7 +38,9 @@ Route::delete('/jobs/{job}','destroy');
 //contact
 Route::view('/contact', 'contact');
 
-
+Route::get('test',function (){
+return new JobPosted();
+});
 
 
 // auth
