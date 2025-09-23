@@ -28,6 +28,8 @@ class JobPosted extends Mailable
     {
         return new Envelope(
             subject: 'Job Posted',
+            // from: 'info@lorem.com' ,
+            // replyTo: 'info@lorem.com' ,
         );
     }
 

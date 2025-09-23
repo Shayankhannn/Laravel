@@ -194,3 +194,7 @@ for any thing little bit larger I 1oo% redcommned that you stick with policy
 
 mail:
 php artisan make:mail
+
+in config and env you can change email of from
+
+using mailtrap
