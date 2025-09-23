@@ -198,3 +198,6 @@ php artisan make:mail
 in config and env you can change email of from
 
 using mailtrap
+
+php artisan queue:work
+

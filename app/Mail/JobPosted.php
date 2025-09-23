@@ -41,6 +41,10 @@ class JobPosted extends Mailable
     {
         return new Content(
             view: 'mail.jobposted',
+            // with: [
+            //     'foo' => 'bar',
+            //     'title' => $this->job->title
+            // ],
         );
     }
 
