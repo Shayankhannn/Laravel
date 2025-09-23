@@ -201,3 +201,7 @@ using mailtrap
 
 php artisan queue:work
 
+TODO:
+mail is failing work oujt on it 
+
+php artisan make:job
