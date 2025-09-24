@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>      page</title>
-    <script src="https://cdn.tailwindcss.com" ></script>
+    @vite(['resources/js/app.js','resources/css/app.css'])
 </head>
 <body  class="h-full">
 <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
